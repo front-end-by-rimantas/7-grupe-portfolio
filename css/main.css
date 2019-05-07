@@ -95,7 +95,33 @@ body * {
 }
     #header > .container {
         padding: 15px 0;
+        text-transform: uppercase;
     }
+
+        #header .logo{
+            display:inline-block;
+            float: left;
+            font-size: 25px;
+            line-height: 25px;
+            color: #F34236;
+        }
+
+        #header nav{
+            display:inline-block;
+            float: right;
+        }
+
+        #header a{
+            text-decoration: none;
+            color: #121212;
+        }
+
+            #header nav > a {
+                padding: 10px;
+                background-color: transparent;
+                border-radius: 30px;
+            }
+
 
 /* hero */
 #hero {
