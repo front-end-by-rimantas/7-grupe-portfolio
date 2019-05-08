@@ -48,6 +48,10 @@ body * {
     }
 }
 
+.centered-text{
+    text-align:center;
+}
+
 .section-title {
     display: inline-block;
     width: 100%;
@@ -159,6 +163,18 @@ body * {
 /* my portfolio */
 
 /* testimonials */
+.testimonial{
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+    .testimonial > *{
+        margin-bottom: 20px;
+    }
+#testimonials .btn{
+    margin: 0 4px;
+}
 
 /* my blog */
 
