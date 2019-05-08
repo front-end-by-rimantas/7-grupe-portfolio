@@ -29,11 +29,11 @@ function generateBlog( data ) {
     // konstravimas...
     for ( var i=0; i<data.length; i++ ) {
         HTML += '<div class="blog">\
-                    <div class="img"></div>\
-                    <h3>Web design</h3>\
-                    <div class="date">Posted on 25th Oct 2018</div>\
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, molestias...</p>\
-                    <a href="#" class="btn btn-red">Read more</a>\
+                    <div class="img" style="background-image:url(img/blog/'+data[i].photo+');"></div>\
+                    <h3>'+data[i].title+'</h3>\
+                    <div class="date">Posted on '+data[i].date+'</div>\
+                    <p>'+data[i].description+'...</p>\
+                    <a href="'+data[i].url+'" class="btn btn-red">Read more</a>\
                 </div>';
     }
 
