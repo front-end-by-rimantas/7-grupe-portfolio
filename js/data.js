@@ -1,5 +1,12 @@
 "use strict";
 
+// HEADER
+
+// HERO
+
+// ABOUT US
+
+// SERVICES
 var services = [
     {
         icon: 'paint-brush',
@@ -18,6 +25,11 @@ var services = [
     }
 ];
 
+// RESUME
+
+// PORTFOLIO
+
+// TESTIMONIALS
 var testimonials = [
     {
         avatar: 'img/testimonials/face1.png',
@@ -39,6 +51,7 @@ var testimonials = [
     }
 ];
 
+// BLOG
 var blog = [
     {
         photo: 'p1.jpg',
@@ -82,3 +95,7 @@ var blog = [
         url: '#'
     }
 ];
+
+// CONTACT
+
+// FOOTER

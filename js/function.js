@@ -1,6 +1,12 @@
 "use strict";
-var activeTestimonial = 0;
 
+// HEADER
+
+// HERO
+
+// ABOUT US
+
+// SERVICES
 function generateServices( data ) {
     var HTML = '';
 
@@ -19,6 +25,13 @@ function generateServices( data ) {
 
     return HTML;
 }
+
+// RESUME
+
+// PORTFOLIO
+
+// TESTIMONIALS
+var activeTestimonial = 0;
 
 function generateTestimonial( data, activeTestimonial=0 ){
     var HTML = '',
@@ -66,6 +79,8 @@ function changeTestimonial( direction, data ){
 
     return target_element.innerHTML = generateTestimonial(data, activeTestimonial);
 };
+
+// BLOG
 
 function generateBlog( data ) {
     var HTML = '',
@@ -151,3 +166,7 @@ function generateRandomBlog( data ) {
     
     return HTML;
 }
+
+// CONTACT
+
+// FOOTER
