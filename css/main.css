@@ -177,6 +177,15 @@ body * {
         .blog-list > .blog:nth-child(3n) {
             margin-right: 0;
         }
+        .blog-list > .blog > .img {
+            display: inline-block;
+            height: 100px;
+            width: 100%;
+            background-image: url(img/blog/p1.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
 /* contact me */
 
