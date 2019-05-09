@@ -1,4 +1,4 @@
-.btn{
+.btn {
     display:inline-block;
     background: #FFF;
     text-align: center;
@@ -8,8 +8,7 @@
     padding: 20px;
     transition: all .2s ease;
 }
-
-.btn:hover{
-    cursor:pointer;
-    border-radius: 5px;
-}
+    .btn:hover {
+        cursor:pointer;
+        border-radius: 5px;
+    }

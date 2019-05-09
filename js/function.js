@@ -20,44 +20,49 @@ function generateServices( data ) {
     return HTML;
 }
 
-function generateTestimonial(data, activeTestimonial=0){
-    var HTML = '';
-    var i = activeTestimonial;
+function generateTestimonial( data, activeTestimonial=0 ){
+    var HTML = '',
+        testimonial;
+        
     if (!Array.isArray(data)){
         return HTML;
     }
 
-    if (data.length > 0){
-        HTML += '<img src='+data[i].avatar+' alt= '+data[i].name+'>\
-                <p>'+data[i].p+'</p>\
-                <h4>'+data[i].name+'</h4>\
-                <p>'+data[i].position+'</p>';
+    if ( data.length === 0 ||
+         !data[activeTestimonial] ){
+        return HTML;
+    }
+    testimonial = data[activeTestimonial];
+
+    if ( testimonial.avatar &&
+         testimonial.p &&
+         testimonial.name ){
+        HTML += '<img src='+testimonial.avatar+' alt= '+testimonial.name+'>\
+                <p>'+testimonial.p+'</p>\
+                <h4>'+testimonial.name+'</h4>';
+        if ( testimonial.position ) {
+            HTML += '<p>'+testimonial.position+'</p>';
+        }
     }
     return HTML;
 }
 
-function changeTestimonial(direction,data){
-    switch(direction){
-        case 'left':
-            if(activeTestimonial + 1 === data.length){
-                activeTestimonial = 0;
-                document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(data, activeTestimonial);
-                break;
-            }
-            activeTestimonial++;
-            document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(data,activeTestimonial);
-            break;
-        case 'right':
-        if(activeTestimonial-1 < 0 ){
-            activeTestimonial = data.length -1;
-            document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(data, activeTestimonial);
-            break;
+function changeTestimonial( direction, data ){
+    var target_element = document.querySelector('#visible_testimonial');
+
+    if ( direction === 'left' ) {
+        activeTestimonial++;
+        if( activeTestimonial === data.length ){
+            activeTestimonial = 0;
         }
+    } else if ( direction === 'right' ) {
         activeTestimonial--;
-        document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(data,activeTestimonial);
-            break;
-        default:
-            break;
+        if( activeTestimonial < 0 ){
+            activeTestimonial = data.length - 1;
+        }
+    } else {
+        return;
     }
-    
+
+    return target_element.innerHTML = generateTestimonial(data, activeTestimonial);
 };

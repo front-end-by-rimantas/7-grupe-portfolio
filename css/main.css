@@ -48,7 +48,7 @@ body * {
     }
 }
 
-.centered-text{
+.centered-text {
     text-align:center;
 }
 
@@ -103,7 +103,7 @@ body * {
         text-transform: uppercase;
     }
 
-        #header .logo{
+        #header .logo {
             display:inline-block;
             float: left;
             font-size: 25px;
@@ -111,12 +111,12 @@ body * {
             color: #F34236;
         }
 
-        #header nav{
+        #header nav {
             display:inline-block;
             float: right;
         }
 
-        #header a{
+        #header a {
             text-decoration: none;
             color: #121212;
         }
@@ -163,18 +163,18 @@ body * {
 /* my portfolio */
 
 /* testimonials */
-.testimonial{
+.testimonial {
     display: inline-block;
     text-align: center;
     width: 50%;
     margin-left: 25%;
 }
-    .testimonial > *{
+    .testimonial > * {
         margin-bottom: 20px;
     }
-#testimonials .btn{
-    margin: 0 4px;
-}
+    #testimonials .btn {
+        margin: 0 4px;
+    }
 
 /* my blog */
 
@@ -185,9 +185,9 @@ body * {
     color: #FFF;
     text-align: center;
 }
-#footer_top > .container {
-    padding: 30px 0;
-}
-#footer_bottom > .container {
-    padding: 15px 0;
-}
+    #footer_top > .container {
+        padding: 30px 0;
+    }
+    #footer_bottom > .container {
+        padding: 15px 0;
+    }
