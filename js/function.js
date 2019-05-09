@@ -170,3 +170,23 @@ function generateRandomBlog( data ) {
 // CONTACT
 
 // FOOTER
+
+function generateSocialNetworks( data ){
+    var HTML = '',
+        position = 0,
+        icon;
+
+    if( !Array.isArray(data)){
+        return HTML;
+    }
+
+    for(; position < data.length; position++){
+        icon = data[position];
+        if(!icon.name || !icon.url){
+            continue
+        }
+        HTML += '<a href="'+icon.url+'" class="fa fa-'+icon.name+'"/>'
+    }
+
+    return HTML;
+}

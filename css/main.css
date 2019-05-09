@@ -221,6 +221,20 @@ body * {
             letter-spacing: 2px;
             font-weight: 300;
         }
+            #footer_top a {
+                text-decoration: none;
+                color: #FFF;
+                background-color: #000;
+                border-radius: 50%;
+                font-size: 20px;
+                line-height: 20px;
+                width: 40px;
+                padding: 10px;
+                margin: 0 5px;
+            }
+            #footer_top a:hover {
+                background-color: #F34236;
+            }
     #footer_bottom > .container {
         padding: 25px 0;
     }
