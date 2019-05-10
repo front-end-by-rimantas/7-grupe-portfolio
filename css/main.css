@@ -207,7 +207,7 @@ body * {
 #contact-form{
     display: inline-block;
     float: left;
-    width: 50%;
+    width: 55%;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -243,6 +243,38 @@ body * {
             border: 2px solid #a2a2a2;
             margin-bottom: 30px;
         }
+    #contact_me .contact-info {
+        position: relative;
+        display: inline-block;
+        float: left;
+        background-color: #FFF;
+        border-radius: 5px;
+        box-shadow: #999 0 10px 16px;
+        width: 33%;
+        padding: 10px 10px 10px 90px;
+        margin: 0 30px 30px;
+    }
+        #contact_me i.fa {
+            position: absolute;
+            display: inline-block;
+            float: left;
+            background-color: #121212;
+            color: #FFF;
+            top: 10px;
+            left: 20px;
+            line-height: 10px;
+            padding: 20px;
+            border-radius: 50px;
+        }
+
+        #contact_me .contact-info > h4 {
+            display: inline-block;
+            float: left;
+            width: 100%;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
 
 /* footer */
 #footer {
