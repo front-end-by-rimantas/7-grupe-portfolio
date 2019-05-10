@@ -161,12 +161,34 @@ function generateRandomBlog( data ) {
                     <a href="'+post.url+'" class="btn btn-red">Read more</a>\
                 </div>';
     }
-
-    console.log(posted);
-    
     return HTML;
 }
 
 // CONTACT
+function generateContactInfo( data ){
+    var HTML='';
+
+    if ( !Array.isArray(data) ||
+            data.length === 0 ) {
+                console.log('bam');
+                
+        return HTML;
+    }
+
+    for(var i = 0; i < data.length; i++ ){
+        var contact = data[i];
+        if( !contact.type || 
+            !(contact.p1 || contact.p2) ){
+            continue;
+        }
+        HTML+= '<div class="contact-info">\
+                <i class="fa fa-'+contact.icon+'"></i>\
+                <h4>'+contact.type+':</h4>\
+                <p>'+contact.p1+'</p>\
+                <p>'+contact.p2+'</p>\
+                </div>'
+    }
+    return HTML;
+}
 
 // FOOTER
