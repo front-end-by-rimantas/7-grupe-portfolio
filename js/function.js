@@ -179,7 +179,7 @@ function generateSocialNetworks( data ){
         return HTML;
     }
 
-    for(i = 0; i < data.length; i++){
+    for(var i = 0; i < data.length; i++){
         icon = data[i];
         if(!icon.name || !icon.url){
             continue;
