@@ -173,19 +173,18 @@ function generateRandomBlog( data ) {
 
 function generateSocialNetworks( data ){
     var HTML = '',
-        position = 0,
         icon;
 
     if( !Array.isArray(data)){
         return HTML;
     }
 
-    for(; position < data.length; position++){
-        icon = data[position];
+    for(i = 0; i < data.length; i++){
+        icon = data[i];
         if(!icon.name || !icon.url){
-            continue
+            continue;
         }
-        HTML += '<a href="'+icon.url+'" class="fa fa-'+icon.name+'"/>'
+        HTML += '<a href="'+icon.url+'" class="fa fa-'+icon.name+'"/>';
     }
 
     return HTML;
