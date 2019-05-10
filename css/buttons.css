@@ -12,7 +12,10 @@
         cursor:pointer;
         border-radius: 5px;
     }
-    .btn-red{
+    .btn-red {
         background-color: #F34236;
         color: #FFF;
+    }
+    .btn-flatter {
+        padding: 15px 25px;
     }
