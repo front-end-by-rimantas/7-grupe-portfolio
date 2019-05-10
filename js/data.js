@@ -112,7 +112,7 @@ var contacts = [
     },
     {
         type: 'Phone',
-        icon: 'map-marker',
+        icon: 'phone',
         p1: 'Mob: +01 000 000 000',
         p2: 'Fax: +01 000 000 000'
     }
