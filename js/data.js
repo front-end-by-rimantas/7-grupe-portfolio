@@ -101,22 +101,19 @@ var contacts = [
     {
         type: 'Address',
         icon: 'map-marker',
-        p1: '123 6th St.',
-        p2: 'Melbourne, FL 32904, USA'
+        info: ['123 6th St.' , 'Melbourne, FL 32904, USA'],
     },
     {
         type: 'Email',
         icon: 'envelope',
-        p1: 'example@yourdomain.com',
-        p2: 'info@yourdomain.com'
+        info: ['example@yourdomain.com' , 'info@yourdomain.com'],
     },
     {
         type: 'Phone',
         icon: 'phone',
-        p1: 'Mob: +01 000 000 000',
-        p2: 'Fax: +01 000 000 000'
+        info: ['Mob: +01 000 000 000' , 'Fax: +01 000 000 000'],
     }
-]
+];
 
 
 
