@@ -169,4 +169,4 @@ function generateRandomBlog( data ) {
 
 // CONTACT
 
-// FOOTER
+// FOOTER 

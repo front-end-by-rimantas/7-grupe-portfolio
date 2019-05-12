@@ -33,20 +33,20 @@ var services = [
 var testimonials = [
     {
         avatar: 'img/testimonials/face1.png',
-        p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur soluta dignissimos quos perspiciatis illum hic voluptatem aut dolores atque maiores, iste obcaecati eligendi sit nisi dolorem velit provident asperiores harum.',
-        name: 'MS. Mandy Doe',
+        p: 'The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.',
+        name: '- MS. Mandy Doe',
         position: 'Founder of Winrawr'
     },
     {
         avatar: 'img/testimonials/face2.png',
         p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur soluta dignissimos quos perspiciatis illum hic voluptatem aut dolores atque maiores, iste obcaecati eligendi sit nisi dolorem velit provident asperiores harum.',
-        name: 'MS. Mandy Foe',
+        name: '- MS. Mandy Foe',
         position: 'Founder of OwO'
     },
     {
         avatar: 'img/testimonials/face3.png',
         p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur soluta dignissimos quos perspiciatis illum hic voluptatem aut dolores atque maiores, iste obcaecati eligendi sit nisi dolorem velit provident asperiores harum.',
-        name: 'MS. Mandy Bam',
+        name: '- MS. Mandy Bam',
         position: 'Founder of Zip'
     }
 ];
