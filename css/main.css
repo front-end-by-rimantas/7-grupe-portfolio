@@ -159,7 +159,14 @@ body * {
 /* my resume */
 
 /* freelance */
-
+.freelance-type {
+    color: #fff;
+    padding: 0 0 30px;
+    font-size: 34px;
+    line-height: 34px;
+    text-align: center;
+    text-transform: uppercase;
+}
 /* my portfolio */
 
 /* testimonials */

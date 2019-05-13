@@ -13,6 +13,17 @@
         cursor:pointer;
         border-radius: 5px;
     }
+
+.btn-wrapper {
+    text-align: center;
+}
+    .btn-white {
+        font-size: 16px;
+        line-height: 50px;
+        padding: 0 25px;
+        border: none;
+        box-shadow: 0px 1px 5px rgb(116, 111, 111);
+    }
     .btn-red {
         background-color: #F34236;
         color: #FFF;
@@ -20,3 +31,4 @@
     .btn-flatter {
         padding: 15px 25px;
     }
+
