@@ -32,21 +32,21 @@ var services = [
 // TESTIMONIALS
 var testimonials = [
     {
-        avatar: 'img/testimonials/face1.png',
-        p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur soluta dignissimos quos perspiciatis illum hic voluptatem aut dolores atque maiores, iste obcaecati eligendi sit nisi dolorem velit provident asperiores harum.',
-        name: 'MS. Mandy Doe',
+        avatar: 'face1.png',
+        p: 'The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.',
+        name: '- MS. Mandy Doe',
         position: 'Founder of Winrawr'
     },
     {
-        avatar: 'img/testimonials/face2.png',
+        avatar: 'face2.png',
         p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur soluta dignissimos quos perspiciatis illum hic voluptatem aut dolores atque maiores, iste obcaecati eligendi sit nisi dolorem velit provident asperiores harum.',
-        name: 'MS. Mandy Foe',
+        name: '- MS. Mandy Foe',
         position: 'Founder of OwO'
     },
     {
-        avatar: 'img/testimonials/face3.png',
+        avatar: 'face3.png',
         p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur soluta dignissimos quos perspiciatis illum hic voluptatem aut dolores atque maiores, iste obcaecati eligendi sit nisi dolorem velit provident asperiores harum.',
-        name: 'MS. Mandy Bam',
+        name: '- MS. Mandy Bam',
         position: 'Founder of Zip'
     }
 ];
@@ -97,5 +97,46 @@ var blog = [
 ];
 
 // CONTACT
+var contacts = [
+    {
+        type: 'Address',
+        icon: 'map-marker',
+        info: ['123 6th St.' , 'Melbourne, FL 32904, USA'],
+    },
+    {
+        type: 'Email',
+        icon: 'envelope',
+        info: ['example@yourdomain.com' , 'info@yourdomain.com'],
+    },
+    {
+        type: 'Phone',
+        icon: 'phone',
+        info: ['Mob: +01 000 000 000' , 'Fax: +01 000 000 000'],
+    }
+];
+
+
 
 // FOOTER
+var social_networks = [
+    {
+        name: 'facebook',
+        url: '#'
+    },
+    {
+        name: 'twitter',
+        url: '#'
+    },
+    {
+        name: 'linkedin',
+        url: '#'
+    },
+    {
+        name: 'pinterest',
+        url: '#'
+    },
+    {
+        name: 'instagram',
+        url: '#'
+    }
+]

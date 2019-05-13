@@ -20,5 +20,8 @@ document.querySelector('#testimonials .testimonial').innerHTML = generateTestimo
 document.querySelector('#blog .blog-list').innerHTML = generateRandomBlog( blog );
 
 // CONTACT
+document.querySelector('#contact_me #contact-info-list').innerHTML = generateContactInfo( contacts );
 
 // FOOTER
+document.querySelector('#footer_top #social-icons').innerHTML = generateSocialNetworks(social_networks);
+
