@@ -99,3 +99,25 @@ var blog = [
 // CONTACT
 
 // FOOTER
+var social_networks = [
+    {
+        name: 'facebook',
+        url: '#'
+    },
+    {
+        name: 'twitter',
+        url: '#'
+    },
+    {
+        name: 'linkedin',
+        url: '#'
+    },
+    {
+        name: 'pinterest',
+        url: '#'
+    },
+    {
+        name: 'instagram',
+        url: '#'
+    }
+]

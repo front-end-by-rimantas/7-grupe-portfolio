@@ -22,3 +22,4 @@ document.querySelector('#blog .blog-list').innerHTML = generateRandomBlog( blog 
 // CONTACT
 
 // FOOTER
+document.querySelector('#footer_top #social-icons').innerHTML = generateSocialNetworks(social_networks);
