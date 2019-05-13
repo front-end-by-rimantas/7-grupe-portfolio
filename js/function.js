@@ -1,6 +1,12 @@
 "use strict";
-var activeTestimonial = 0;
 
+// HEADER
+
+// HERO
+
+// ABOUT US
+
+// SERVICES
 function generateServices( data ) {
     var HTML = '';
 
@@ -20,6 +26,13 @@ function generateServices( data ) {
     return HTML;
 }
 
+// RESUME
+
+// PORTFOLIO
+
+// TESTIMONIALS
+var activeTestimonial = 0;
+
 function generateTestimonial( data, activeTestimonial=0 ){
     var HTML = '',
         testimonial;
@@ -37,7 +50,7 @@ function generateTestimonial( data, activeTestimonial=0 ){
     if ( testimonial.avatar &&
          testimonial.p &&
          testimonial.name ){
-        HTML += '<img src='+testimonial.avatar+' alt= '+testimonial.name+'>\
+        HTML += '<img src="img/testimonials/'+testimonial.avatar+'" alt= "'+testimonial.name+'">\
                 <p>'+testimonial.p+'</p>\
                 <h4>'+testimonial.name+'</h4>';
         if ( testimonial.position ) {
@@ -66,6 +79,8 @@ function changeTestimonial( direction, data ){
 
     return target_element.innerHTML = generateTestimonial(data, activeTestimonial);
 };
+
+// BLOG
 
 function generateBlog( data ) {
     var HTML = '',
@@ -146,8 +161,53 @@ function generateRandomBlog( data ) {
                     <a href="'+post.url+'" class="btn btn-red">Read more</a>\
                 </div>';
     }
-
-    console.log(posted);
-    
     return HTML;
 }
+
+// CONTACT
+function generateContactInfo( data ){
+    var HTML='';
+
+    if ( !Array.isArray(data) ||
+            data.length === 0 ) {                
+        return HTML;
+    }
+
+    for(var i = 0; i < data.length; i++ ){
+        var contact = data[i];
+        if( !contact.type || 
+            !Array.isArray(contact.info) ||
+            contact.info.length === 0 ){                
+            continue;
+        }
+        HTML+= '<div class="contact-info">\
+                <i class="fa fa-'+contact.icon+'"></i>\
+                <h4>'+contact.type+':</h4>';
+        for(var j = 0; j < contact.info.length; j++ ){
+            HTML+= '<p>'+contact.info[j]+'</p>';
+        }
+        HTML+= '</div>';
+    }
+    return HTML;
+}
+
+// FOOTER
+function generateSocialNetworks( data ){
+    var HTML = '',
+        icon;
+
+    if( !Array.isArray(data)){
+        return HTML;
+    }
+
+    for(var i = 0; i < data.length; i++){
+        icon = data[i];
+        if(!icon.name || !icon.url){
+            continue;
+        }
+        HTML += '<a href="'+icon.url+'" class="fa fa-'+icon.name+'"/>';
+    }
+
+    return HTML;
+}
+
