@@ -161,12 +161,53 @@ function generateRandomBlog( data ) {
                     <a href="'+post.url+'" class="btn btn-red">Read more</a>\
                 </div>';
     }
-
-    console.log(posted);
-    
     return HTML;
 }
 
 // CONTACT
+function generateContactInfo( data ){
+    var HTML='';
 
-// FOOTER 
+    if ( !Array.isArray(data) ||
+            data.length === 0 ) {                
+        return HTML;
+    }
+
+    for(var i = 0; i < data.length; i++ ){
+        var contact = data[i];
+        if( !contact.type || 
+            !Array.isArray(contact.info) ||
+            contact.info.length === 0 ){                
+            continue;
+        }
+        HTML+= '<div class="contact-info">\
+                <i class="fa fa-'+contact.icon+'"></i>\
+                <h4>'+contact.type+':</h4>';
+        for(var j = 0; j < contact.info.length; j++ ){
+            HTML+= '<p>'+contact.info[j]+'</p>';
+        }
+        HTML+= '</div>';
+    }
+    return HTML;
+}
+
+// FOOTER
+function generateSocialNetworks( data ){
+    var HTML = '',
+        icon;
+
+    if( !Array.isArray(data)){
+        return HTML;
+    }
+
+    for(var i = 0; i < data.length; i++){
+        icon = data[i];
+        if(!icon.name || !icon.url){
+            continue;
+        }
+        HTML += '<a href="'+icon.url+'" class="fa fa-'+icon.name+'"/>';
+    }
+
+    return HTML;
+}
+
