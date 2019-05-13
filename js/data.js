@@ -97,6 +97,25 @@ var blog = [
 ];
 
 // CONTACT
+var contacts = [
+    {
+        type: 'Address',
+        icon: 'map-marker',
+        info: ['123 6th St.' , 'Melbourne, FL 32904, USA'],
+    },
+    {
+        type: 'Email',
+        icon: 'envelope',
+        info: ['example@yourdomain.com' , 'info@yourdomain.com'],
+    },
+    {
+        type: 'Phone',
+        icon: 'phone',
+        info: ['Mob: +01 000 000 000' , 'Fax: +01 000 000 000'],
+    }
+];
+
+
 
 // FOOTER
 var social_networks = [
