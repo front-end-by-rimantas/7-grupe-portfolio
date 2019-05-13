@@ -183,7 +183,7 @@ body * {
     #visible_testimonial > img {
         display: inline-block;
         height: 100px;
-        background-image: url(img/blog/face1.png);
+        background-image: url(../img/testimonials/face1.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
