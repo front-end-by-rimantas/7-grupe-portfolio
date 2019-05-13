@@ -50,7 +50,7 @@ function generateTestimonial( data, activeTestimonial=0 ){
     if ( testimonial.avatar &&
          testimonial.p &&
          testimonial.name ){
-        HTML += '<img src='+testimonial.avatar+' alt= '+testimonial.name+'>\
+        HTML += '<img src="img/testimonials/'+testimonial.avatar+'" alt= "'+testimonial.name+'">\
                 <p>'+testimonial.p+'</p>\
                 <h4>'+testimonial.name+'</h4>';
         if ( testimonial.position ) {
@@ -192,7 +192,6 @@ function generateContactInfo( data ){
 }
 
 // FOOTER
-
 function generateSocialNetworks( data ){
     var HTML = '',
         icon;
@@ -211,3 +210,4 @@ function generateSocialNetworks( data ){
 
     return HTML;
 }
+
