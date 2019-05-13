@@ -282,8 +282,33 @@ body * {
     text-align: center;
 }
     #footer_top > .container {
-        padding: 30px 0;
+        padding: 40px 0;
     }
+        #footer_top .footer-logo {
+            margin-bottom: 20px;
+            color: #FFF;
+            text-transform: uppercase;
+            font-size: 22px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+            #footer_top a {
+                text-decoration: none;
+                color: #FFF;
+                background-color: #000;
+                border-radius: 50%;
+                font-size: 20px;
+                line-height: 20px;
+                width: 40px;
+                padding: 10px;
+                margin: 0 5px;
+            }
+            #footer_top a:hover {
+                background-color: #F34236;
+            }
     #footer_bottom > .container {
-        padding: 15px 0;
+        padding: 25px 0;
     }
+        #footer_bottom p {
+            color: #999;
+        }
