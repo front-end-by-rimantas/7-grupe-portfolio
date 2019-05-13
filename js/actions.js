@@ -1,6 +1,12 @@
 "use strict";
 
 // HEADER
+// jeigu paspaude ant menu nuorodos, tai:
+    // - pasalinu stiliu nuo visu nuorodu
+    // - pazymime paspaustaja nuoroda (raudonas mygtuko stilius)
+
+// scroliname ir apskaiciuojame kuria nuoroda reikia pazymeti
+    // - 
 
 // HERO
 
