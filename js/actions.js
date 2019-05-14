@@ -1,6 +1,17 @@
 "use strict";
 
 // HEADER
+// jeigu paspaude ant menu nuorodos, tai:
+$('#header nav > a').click(function(){
+    // - pasalinu stiliu nuo visu nuorodu
+    $('#header nav > a').removeClass('active');
+    // - pazymime paspaustaja nuoroda (raudonas mygtuko stilius)
+    // this - reprezentuoja einamaji paspausta elementa
+    $(this).addClass('active');
+});
+
+// scroliname ir apskaiciuojame kuria nuoroda reikia pazymeti
+    // - 
 
 // HERO
 

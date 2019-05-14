@@ -155,10 +155,12 @@ function generateRandomBlog( data ) {
         
         HTML += '<div class="blog">\
                     <div class="img" style="background-image:url(img/blog/'+post.photo+');"></div>\
-                    <h3>'+post.title+'</h3>\
-                    <div class="date">Posted on '+post.date+'</div>\
-                    <p>'+post.description+'...</p>\
-                    <a href="'+post.url+'" class="btn btn-red">Read more</a>\
+                    <div class="blog-textarea">\
+                        <h3>'+post.title+'</h3>\
+                        <div class="date">Posted on '+post.date+'</div>\
+                        <p>'+post.description+'...</p>\
+                    </div>\
+                    <a href="'+post.url+'" class="btn btn-red btn-flattest btn-shadow">Read more</a>\
                 </div>';
     }
     return HTML;
