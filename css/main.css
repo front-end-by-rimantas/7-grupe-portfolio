@@ -126,6 +126,13 @@ body * {
                 background-color: transparent;
                 border-radius: 30px;
             }
+                #header nav > a:hover {
+                    color: #F34236;
+                }
+                #header nav > a.active {
+                    background-color: #F34236;
+                    color: #FFF;
+                }
 
 
 /* hero */
