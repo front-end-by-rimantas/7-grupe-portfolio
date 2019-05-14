@@ -158,6 +158,45 @@ body * {
 
 /* my resume */
 
+.resume-container {
+    display: inline-block;
+    padding: 30px 20px;
+    width: 100%;
+}
+    .resume-box {
+        display: inline-block;
+        width: calc( (100% - 2 * 20px) / 2 );
+        border-radius: 10px;
+        padding: 30px 20px;
+        box-shadow: #3a4e5f33 0 10px 16px, #3a4e5f0d 0 -5px 16px;
+        float: left;
+        margin: 0 0 0 20px;
+    } 
+        .resume-box > .h4 {
+            font-size: 22px;
+            color: #F34236;
+            font-weight: 600;
+            text-transform: uppercase;                    
+        }
+        .resume-box > .h5 {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .resume-box > .text-date {
+            font-size: 14px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .resume-box > .text {
+            font-size: 15px;
+            margin-bottom: 10px;
+            min-height: 70px;
+        }   
+
+
 /* freelance */
 .freelance-type {
     color: #fff;
