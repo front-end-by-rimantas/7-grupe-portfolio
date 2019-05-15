@@ -152,9 +152,25 @@ body * {
 
         .info-box {
             display: inline-block;
-            width: 58%;
+            width: 57%;
             float: right;
         }
+
+.caps {
+    text-transform: uppercase;
+}
+
+            .intro {
+                font-size: 27px;
+                line-height: 27px;
+                font-weight: 400;
+                margin: 0 0 10px;
+            }
+
+            .info-paragraph {
+                font-size: 17px;
+                line-height: 19px;
+            }
 
 /* my services */
 .service-list {
