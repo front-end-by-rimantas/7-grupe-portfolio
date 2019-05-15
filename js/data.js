@@ -5,6 +5,28 @@
 // HERO
 
 // ABOUT US
+var social_stuff = [
+    {
+        name: 'facebook',
+        url: '#'
+    },
+    {
+        name: 'twitter',
+        url: '#'
+    },
+    {
+        name: 'instagram',
+        url: '#'
+    },
+    {
+        name: 'youtube',
+        url: '#'
+    },
+    {
+        name: 'pinterest',
+        url: '#'
+    }
+]
 
 // SERVICES
 var services = [

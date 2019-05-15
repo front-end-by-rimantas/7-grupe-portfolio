@@ -169,8 +169,27 @@ body * {
 
             .info-paragraph {
                 font-size: 17px;
-                line-height: 19px;
+                line-height: 20px;
+                font-weight: 100;
+                margin: 0 0 10px;
             }
+
+                #sociali-icona a {
+                    width: 37px;
+                    height: 37px;
+                    text-decoration: none;
+                    line-height: 35px;
+                    background: #000;
+                    border-radius: 50%;
+                    text-align: center;
+                    color: #fff;
+                    padding: 1px;
+                    margin: 15px 5px 0 0;
+                }
+
+                #sociali-icona a:hover {
+                    background-color: #F34236;
+                }
 
 /* my services */
 .service-list {
