@@ -169,10 +169,14 @@ body * {
 
             .info-paragraph {
                 font-size: 17px;
-                line-height: 20px;
+                line-height: 18px;
                 font-weight: 100;
                 margin: 0 0 10px;
             }
+
+                #sociali-icona {
+                    padding: 10px 0 35px;
+                }
 
                 #sociali-icona a {
                     width: 37px;
@@ -184,7 +188,8 @@ body * {
                     text-align: center;
                     color: #fff;
                     padding: 1px;
-                    margin: 15px 5px 0 0;
+                    margin: 0px 5px 0 0;
+                    box-shadow: #999 0 7px 20px;
                 }
 
                 #sociali-icona a:hover {
