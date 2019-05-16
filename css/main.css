@@ -157,7 +157,6 @@ body * {
         @media (max-width: 700px) {
             .info-box {
                 width: 100%;
-                margin: 40px calc(50% - 300px);
             }
         }
         @media (max-width: 700px) {
