@@ -255,3 +255,12 @@ function detectClosestVisibleSection( scrollTop ) {
 
     return;
 }
+
+function headerDesignState() {
+    if ( $(document).scrollTop() < 70 ) {
+        $('#header').addClass('header-transparent');
+    } else {
+        $('#header').removeClass('header-transparent');
+    }
+    return;
+}
