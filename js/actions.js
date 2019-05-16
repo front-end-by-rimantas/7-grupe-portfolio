@@ -12,6 +12,8 @@ $('#header nav > a').click(function(){
 
 // scroliname ir apskaiciuojame kuria nuoroda reikia pazymeti
     // - 
+    detectClosestVisibleSection( $(document).scrollTop() );
+    
     $(document).scroll(function(){
         detectClosestVisibleSection( $(document).scrollTop() );
     });
