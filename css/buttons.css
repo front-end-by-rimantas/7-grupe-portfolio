@@ -38,6 +38,8 @@
         font-weight: 600;
         padding: 12px 40px;
         margin: 0 10px 0 0;
+        box-shadow: 0px 1px 5px rgb(116, 111, 111);
+
     }
 
     .btn-flatter {
