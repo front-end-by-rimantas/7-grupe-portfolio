@@ -12,6 +12,9 @@ $('#header nav > a').click(function(){
 
 // scroliname ir apskaiciuojame kuria nuoroda reikia pazymeti
     // - 
+    $(document).scroll(function(){
+        detectClosestVisibleSection( $(document).scrollTop() );
+    });
 
 // HERO
 

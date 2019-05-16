@@ -213,3 +213,45 @@ function generateSocialNetworks( data ){
     return HTML;
 }
 
+function detectClosestVisibleSection( scrollTop ) {
+    var a_tags = $('#header nav > a'),
+        links = [],
+        top = [];
+    
+    // visos nuorodos
+    a_tags.each( function(){
+        links.push( $(this).attr('href') );
+    });
+    
+    // kokiuose ausciuose yra nuorodas reprezentuojancios sekcijos
+    for ( var i=0; i<links.length; i++ ) {
+        if ( links[i] === '#' ) {
+            top.push( 0 );
+        } else {
+            top.push( Math.floor( $(links[i]).position().top ) );
+        }
+    }
+
+    // nustatome artimiausia sekcija, kurioje esu
+    for ( var i=0; i<top.length; i++ ) {
+        if ( top[i] <= scrollTop ) {
+            $('#header nav > a').removeClass('active');
+            $('#header nav > a').eq(i).addClass('active');
+        } else {
+            break;
+        }
+    }
+
+    // top.push(Infinity);
+    // // nustatome artimiausia sekcija, kurioje esu
+    // for ( var i=0; i<top.length; i++ ) {
+    //     // pirmoji sekcija, kuri jau yra per toli nei esu nuscrolines
+    //     if ( top[i] > scrollTop ) {
+    //         $('#header nav > a').removeClass('active');
+    //         $('#header nav > a').eq(i-1).addClass('active');
+    //         break;
+    //     }
+    // }
+
+    return;
+}
