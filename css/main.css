@@ -126,6 +126,13 @@ body * {
                 background-color: transparent;
                 border-radius: 30px;
             }
+                #header nav > a:hover {
+                    color: #F34236;
+                }
+                #header nav > a.active {
+                    background-color: #F34236;
+                    color: #FFF;
+                }
 
 
 /* hero */
@@ -177,25 +184,87 @@ body * {
 /* about me */
 
 /* my services */
+
 .service-list {
     display: inline-block;
     width: 100%;
+    padding: 25px 0 10px;
 }
     .service-list > .service {
         display: inline-block;
         float: left;
         margin-right: 30px;
         width: calc( (100% - 2 * 30px) / 3 );
-        padding: 20px;
-        box-shadow: 0 4px 16px #CCC9;
+        padding: 20px 10px 30px;
+        box-shadow: #3a4e5f33 0 10px 16px,
+                    #3a4e5f0d 0 -5px 16px;
         background-color: #FFF;
+        border-radius: 10px;
+        text-align: center;
     }
+        .service-list h3 {
+            font-size: 20px;
+            padding: 25px 0 10px;
+            text-transform: uppercase;  
+         }
+        .service-list p {
+            font-size: 16px;
+            line-height: 26px;
+            min-height: 110px; 
+         }
+        .service-list i.fa {
+            border-radius: 80px; 
+            background-color: #F34236;
+            color: #FFF;
+            height: 80px;
+            width: 80px;
+            font-size: 40px;
+            line-height: 80px; 
+        }
         .service-list > .service:nth-child(3n) {
             margin-right: 0;
         }
-    
 
 /* my resume */
+
+.resume-container {
+    display: inline-block;
+    padding: 30px 20px;
+    width: 100%;
+}
+    .resume-box {
+        display: inline-block;
+        width: calc( (100% - 2 * 20px) / 2 );
+        border-radius: 10px;
+        padding: 30px 20px;
+        box-shadow: #3a4e5f33 0 10px 16px, #3a4e5f0d 0 -5px 16px;
+        float: left;
+        margin: 0 0 0 20px;
+    } 
+        .resume-box > .h4 {
+            font-size: 22px;
+            color: #F34236;
+            font-weight: 600;
+            text-transform: uppercase;                    
+        }
+        .resume-box > .h5 {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .resume-box > .text-date {
+            font-size: 14px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .resume-box > .text {
+            font-size: 15px;
+            margin-bottom: 10px;
+            min-height: 70px;
+        }   
+
 
 /* freelance */
 .freelance-type {
@@ -235,29 +304,50 @@ body * {
 
 /* my blog */
 .blog-list {
-    display: inline-block;
-    width: 100%;
+    display: flex;
+    width: 100%;    
 }
     .blog-list > .blog {
+        position: relative;
+        flex: 1;
         display: inline-block;
         float: left;
+        min-height: 100%;
         margin-right: 30px;
         width: calc( (100% - 2 * 30px) / 3 );
-        padding: 20px;
+        padding: 0;
         box-shadow: 0 4px 16px #CCC9;
         background-color: #FFF;
+        border-radius: 10px;
+        overflow: hidden;
     }
         .blog-list > .blog:nth-child(3n) {
             margin-right: 0;
         }
         .blog-list > .blog > .img {
             display: inline-block;
-            height: 100px;
+            height: 200px;
             width: 100%;
             background-image: url(img/blog/p1.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        .blog-list > .blog > .blog-textarea {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 15px 60px;
+        }
+            .blog-textarea > *{
+                margin-bottom: 10px;
+            }
+            .blog-textarea > p{
+                line-height: 25px;
+            }
+        .blog .btn{
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
         }
 
 /* contact me */
