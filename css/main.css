@@ -157,11 +157,14 @@ body * {
         @media (max-width: 700px) {
             .info-box {
                 width: 100%;
+                margin: 0;
+                margin-top: 40px;
             }
         }
         @media (max-width: 700px) {
             .img-box {
                 width: 100%;
+                margin: 0;
             }
         }
 
