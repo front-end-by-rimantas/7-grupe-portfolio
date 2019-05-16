@@ -133,6 +133,17 @@ body * {
                     background-color: #F34236;
                     color: #FFF;
                 }
+    
+    #header.header-transparent {
+        background-color: transparent;
+        box-shadow: none;
+    }
+        #header.header-transparent .logo {
+            color: #FFF;
+        }
+        #header.header-transparent nav > a {
+            color: #FFF;
+        }
 
 
 /* hero */
