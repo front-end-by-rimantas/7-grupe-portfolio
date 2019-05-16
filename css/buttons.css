@@ -31,4 +31,9 @@
     .btn-flatter {
         padding: 15px 25px;
     }
-
+    .btn-big {
+        margin-top: 25px;
+        letter-spacing: 1px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }

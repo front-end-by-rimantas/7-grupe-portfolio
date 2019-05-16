@@ -130,7 +130,7 @@ body * {
 
 /* hero */
  .parallax{
-    background-image: url(..//img/hero/home.png);
+    background-image: url(../img/hero/home.png);
     color: #FFF;
     height: 100vh;
     background-attachment: fixed;
@@ -166,14 +166,14 @@ body * {
                     letter-spacing: 1px;
                     padding-bottom: 50px;
                 }
-                .Hello > button {
+                /* .Hello > button {
                     margin-top: 25px;
                     background-color: #F34236;
                     color: #FFF;
                     letter-spacing: 1px;
                     padding-right: 40px;
                     padding-left: 40px;
-                }
+                } */
 /* about me */
 
 /* my services */
@@ -222,7 +222,7 @@ body * {
     #visible_testimonial > img {
         display: inline-block;
         height: 100px;
-        background-image: url(img/blog/face1.png);
+        background-image: url(../img/testimonials/face1.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
