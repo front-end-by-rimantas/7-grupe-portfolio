@@ -13,10 +13,9 @@
         cursor:pointer;
         border-radius: 5px;
     }
-    .btn-shadow{
+    .btn-shadow {
         box-shadow: #999 0 7px 20px;
     }
-
 .btn-wrapper {
     text-align: center;
 }
@@ -31,10 +30,24 @@
         background-color: #F34236;
         color: #FFF;
     }
+    .about-btn {
+        font-size: 15px;
+        line-height: 16px;
+        font-weight: 400;
+        padding: 12px 30px;
+        margin: 0 10px 0 0;
+        box-shadow: 0px 1px 5px rgb(116, 111, 111);
+    }
     .btn-flatter {
         padding: 15px 25px;
     }
     .btn-flattest {
         padding: 10px 25px;
+    }
+    .btn-big {
+        margin-top: 25px;
+        letter-spacing: 1px;
+        padding-right: 40px;
+        padding-left: 40px;
     }
 

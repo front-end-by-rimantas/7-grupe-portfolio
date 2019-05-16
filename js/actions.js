@@ -11,11 +11,18 @@ $('#header nav > a').click(function(){
 });
 
 // scroliname ir apskaiciuojame kuria nuoroda reikia pazymeti
-    // - 
+    detectClosestVisibleSection( $(document).scrollTop() );
+    headerDesignState();
+
+    $(document).scroll(function(){
+        detectClosestVisibleSection( $(document).scrollTop() );
+        headerDesignState();
+    });
 
 // HERO
 
 // ABOUT US
+document.querySelector('.info-box #sociali-icona').innerHTML = generateSocialNetworks(social_stuff);
 
 // SERVICES
 document.querySelector('#services .service-list').innerHTML = generateServices( services );
