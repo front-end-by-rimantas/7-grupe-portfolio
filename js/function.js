@@ -7,6 +7,14 @@
 // ABOUT US
 
 // SERVICES
+/**
+ * Takes an array of services
+ *  * and returns generated HTML.
+ * 
+ * @param {services} data
+ * 
+ * @returns {HTML} HTML
+ */
 function generateServices( data ) {
     var HTML = '';
 
@@ -32,7 +40,15 @@ function generateServices( data ) {
 
 // TESTIMONIALS
 var activeTestimonial = 0;
-
+/**
+ * Takes an array of testimonials
+ * figures out which one is active
+ * and returnt generated HTLM of that testimonial.
+ * 
+ * @param {testimonials} data
+ * 
+ * @returns {HTML} HTML
+ */
 function generateTestimonial( data, activeTestimonial=0 ){
     var HTML = '',
         testimonial;
@@ -59,7 +75,17 @@ function generateTestimonial( data, activeTestimonial=0 ){
     }
     return HTML;
 }
-
+/**
+ * Takes direction and an array of testimonials
+ * and changes the current testimonial with the next one
+ * in the supplied direction, will cycle to end/start of list
+ * once reaches the start/end.
+ * 
+ * @param {string} direction
+ * @param {testimonials} data
+ * 
+ * @returns {generateTestimonial} changes active testimonial
+ */
 function changeTestimonial( direction, data ){
     var target_element = document.querySelector('#visible_testimonial');
 
@@ -81,7 +107,15 @@ function changeTestimonial( direction, data ){
 };
 
 // BLOG
-
+/**
+ * Takes an array of blogs,
+ * chooses first 3 
+ * and returns generated HTML.
+ * 
+ * @param {blog} data
+ * 
+ * @returns {HTML} HTML
+ */
 function generateBlog( data ) {
     var HTML = '',
         post,
@@ -122,7 +156,15 @@ function generateBlog( data ) {
     return HTML;
 }
 
-
+/**
+ * Takes an array of blogs,
+ * randomly chooses 3 
+ * and returns generated HTML.
+ * 
+ * @param {blog} data
+ * 
+ * @returns {HTML} HTML
+ */
 function generateRandomBlog( data ) {
     var HTML = '',
         max_post_count = 3,
@@ -167,6 +209,14 @@ function generateRandomBlog( data ) {
 }
 
 // CONTACT
+/**
+ * Takes an array of contacts 
+ * and returns generated HTML.
+ * 
+ * @param {contacts} data
+ * 
+ * @returns {HTML} HTML
+ */
 function generateContactInfo( data ){
     var HTML='';
 
@@ -194,6 +244,14 @@ function generateContactInfo( data ){
 }
 
 // FOOTER
+/**
+ * Takes an array of social networks 
+ * and returns generated HTML with icons.
+ * 
+ * @param {social_networks} data
+ * 
+ * @returns {HTML} HTML
+ */
 function generateSocialNetworks( data ){
     var HTML = '',
         icon;
@@ -212,7 +270,14 @@ function generateSocialNetworks( data ){
 
     return HTML;
 }
-
+/**
+ * Detects the section we are scrolled to
+ * and marks the section in header by changing its style.
+ * 
+ * @param {number} scrollTop
+ * 
+ * @returns
+ */
 function detectClosestVisibleSection( scrollTop ) {
     var a_tags = $('#header nav > a'),
         links = [],
@@ -255,7 +320,13 @@ function detectClosestVisibleSection( scrollTop ) {
 
     return;
 }
-
+/**
+ * Detects our scroll position
+ * and changes header design accordingly.
+ * 
+ * @param
+ * @returns 
+ */
 function headerDesignState() {
     if ( $(document).scrollTop() < 70 ) {
         $('#header').addClass('header-transparent');
