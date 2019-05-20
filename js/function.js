@@ -30,8 +30,19 @@ function generateServices( data ) {
 
 // PORTFOLIO
 function generatePortfolio( data ) {
-    var item = document.getElementById('portfolio_item_template').innerHTML;
-    return template.render( item, data );
+    var gellary_item = document.getElementById('portfolio_item_template').innerHTML,
+        HTML_filter = '<div class="active">All</div>',
+        unique_tags = [];
+    
+    // einame per duomenis ir issitraukiame tag'us
+    for ( var i=0; i<data.length; i++ ) {
+        if ( unique_tags.indexOf( data[i].tag ) === -1 ) {
+            unique_tags.push( data[i].tag );
+            HTML_filter += '<div>'+data[i].tag+'</div>';
+        }
+    }
+    document.querySelector('#portfolio .gallery-filter').innerHTML = HTML_filter;
+    return template.render( gellary_item, data );
 }
 
 // TESTIMONIALS

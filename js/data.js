@@ -53,33 +53,33 @@ var services = [
 var portfolio = [
     {
         photo: 'apps.jpg',
-        title: 'Illustration work 1',
+        title: 'Apps',
+        tag: 'apps'
+    },
+    {
+        photo: 'illustration.jpg',
+        title: 'Illustration work',
         tag: 'illustration'
     },
     {
-        photo: 'apps.jpg',
+        photo: 'photoshop.jpg',
+        title: 'Photoshop work',
+        tag: 'photoshop'
+    },
+    {
+        photo: 'illustration1.jpg',
         title: 'Illustration work 2',
         tag: 'illustration'
     },
     {
-        photo: 'apps.jpg',
-        title: 'Illustration work 3',
-        tag: 'illustration'
+        photo: 'photoshop1.jpg',
+        title: 'Photoshop work 2',
+        tag: 'photoshop'
     },
     {
-        photo: 'apps.jpg',
-        title: 'Illustration work 4',
-        tag: 'illustration'
-    },
-    {
-        photo: 'apps.jpg',
-        title: 'Illustration work 5',
-        tag: 'illustration'
-    },
-    {
-        photo: 'apps.jpg',
-        title: 'Illustration work 6',
-        tag: 'illustration'
+        photo: 'website.jpg',
+        title: 'Website work',
+        tag: 'website'
     }
 ];
 

@@ -31,6 +31,9 @@ document.querySelector('#services .service-list').innerHTML = generateServices( 
 
 // PORTFOLIO
 document.querySelector('#portfolio .gallery-list').innerHTML = generatePortfolio( portfolio );
+$('#portfolio .gallery-filter > div').click(function(){
+    console.log( $(this).text() );
+});
 
 // TESTIMONIALS
 document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(testimonials, 0);
