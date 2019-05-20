@@ -5,6 +5,7 @@ body * {
     vertical-align: top;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-break: break-word;
 }
 
 .bg-red {
@@ -45,6 +46,8 @@ body * {
     .container {
         width: 100%;
         margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
@@ -294,6 +297,13 @@ body * {
         .service-list > .service:nth-child(3n) {
             margin-right: 0;
         }
+@media (max-width: 500px) {
+    .service-list .service {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
 
 /* my resume */
 
@@ -333,7 +343,14 @@ body * {
             font-size: 15px;
             margin-bottom: 10px;
             min-height: 70px;
-        }   
+        }
+@media (max-width: 700px) {
+    .resume-box {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+}
 
 
 /* freelance */
@@ -419,12 +436,22 @@ body * {
             bottom: 15px;
             left: 15px;
         }
-
+@media (max-width: 700px) {
+    .blog-list {
+        display: inline-block;
+    }
+    .blog-list > .blog {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+}
 /* contact me */
 #contact-form {
     display: inline-block;
     float: left;
-    width: 55%;
+    width: calc( ((100% - 30px) / 5) * 3 );
+    margin-right: 30px;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -441,7 +468,10 @@ body * {
         display: inline-block;
         float:left;
         width:100%;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+    }
+    #contact-form .form-row:last-of-type {
+        margin-bottom: 0px;
     }
         .form-row > input {
             background-color: transparent;
@@ -451,27 +481,38 @@ body * {
             border-bottom: 2px solid #a2a2a2;
             width: calc(50% - 10px);
         }
-
-        #contact-form textarea {
+            .form-row > input:focus {
+                border-color: #F00;
+                outline: none;
+            }
+        .form-row textarea {
             width: 100%;
             font-size: 14px;
             line-height: 20px;
             padding: 6px;
             border: 2px solid #a2a2a2;
-            margin-bottom: 30px;
+            resize: none;
         }
-    #contact_me .contact-info {
+            .form-row > textarea:focus {
+                border-color: #F00;
+                outline: none;
+            }
+    #contact-info-list {
+        float:left;
+        width: calc( ((100% - 30px) / 5) * 2 );
+    }
+    #contact-info-list .contact-info {
         position: relative;
         display: inline-block;
         float: left;
         background-color: #FFF;
         border-radius: 5px;
         box-shadow: #999 0 10px 16px;
-        width: 33%;
+        width: 100%;
         padding: 10px 10px 10px 90px;
-        margin: 0 30px 30px;
+        margin-bottom: 30px;
     }
-        #contact_me i.fa {
+        #contact-info-list i.fa {
             position: absolute;
             display: inline-block;
             float: left;
@@ -479,22 +520,60 @@ body * {
             color: #FFF;
             top: 10px;
             left: 20px;
-            line-height: 10px;
-            padding: 20px;
-            border-radius: 50px;
+            font-size: 15px;
+            line-height: 40px;
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
         }
-
-        #contact_me .contact-info > h4 {
+        #contact-info-list .contact-info > h4 {
             display: inline-block;
             float: left;
             width: 100%;
             font-size: 22px;
             margin-bottom: 10px;
         }
+
+        #contact-info-list .contact-info > p{
+            display: inline-block;
+            float: left;
+            width: 100%;
+        }
         @media (max-width: 1200px) {
             #contact-info-list {
-                width: auto;
                 font-size: 15px;
+            }
+        }
+        @media (max-width: 900px) {
+            .form-row input {
+                width: 100%;
+            }
+                .form-row input:first-of-type {
+                    margin-bottom: 20px;
+                }
+        }
+        @media (max-width: 700px) {
+            #contact-form {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+                .form-row input {
+                    width: calc(50% - 10px);
+                }
+                .form-row input:first-of-type {
+                    margin-bottom: 0px;
+                }
+            #contact-info-list {
+                width: 100%;
+            }
+        }
+        @media (max-width: 500px) {
+            .form-row input {
+                width: 100%;
+            }
+            .form-row input:first-of-type {
+                margin-bottom: 20px;
             }
         }
 /* footer */
