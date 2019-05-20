@@ -8,12 +8,9 @@
 
 // SERVICES
 /**
- * Takes an array of services
- *  * and returns generated HTML.
- * 
- * @param {services} data
- * 
- * @returns {HTML} HTML
+ * Takes an array of services and returns generated HTML.
+ * @param {[]} data
+ * @returns {string} HTML
  */
 function generateServices( data ) {
     var HTML = '';
@@ -41,13 +38,10 @@ function generateServices( data ) {
 // TESTIMONIALS
 var activeTestimonial = 0;
 /**
- * Takes an array of testimonials
- * figures out which one is active
+ * Takes an array of testimonials figures out which one is active
  * and returnt generated HTLM of that testimonial.
- * 
- * @param {testimonials} data
- * 
- * @returns {HTML} HTML
+ * @param {[]} data
+ * @returns {string} HTML
  */
 function generateTestimonial( data, activeTestimonial=0 ){
     var HTML = '',
@@ -80,11 +74,9 @@ function generateTestimonial( data, activeTestimonial=0 ){
  * and changes the current testimonial with the next one
  * in the supplied direction, will cycle to end/start of list
  * once reaches the start/end.
- * 
- * @param {string} direction
- * @param {testimonials} data
- * 
- * @returns {generateTestimonial} changes active testimonial
+ * @param {string} direction one of values: left | right
+ * @param {[]} data
+ * @returns {void} changes active testimonial
  */
 function changeTestimonial( direction, data ){
     var target_element = document.querySelector('#visible_testimonial');
@@ -108,13 +100,9 @@ function changeTestimonial( direction, data ){
 
 // BLOG
 /**
- * Takes an array of blogs,
- * chooses first 3 
- * and returns generated HTML.
- * 
- * @param {blog} data
- * 
- * @returns {HTML} HTML
+ * Takes an array of blogs, chooses first 3 and returns generated HTML.
+ * @param {[]} data
+ * @returns {string} HTML
  */
 function generateBlog( data ) {
     var HTML = '',
@@ -157,13 +145,9 @@ function generateBlog( data ) {
 }
 
 /**
- * Takes an array of blogs,
- * randomly chooses 3 
- * and returns generated HTML.
- * 
- * @param {blog} data
- * 
- * @returns {HTML} HTML
+ * Takes an array of blogs, randomly chooses 3 and returns generated HTML.
+ * @param {[]} data
+ * @returns {string} HTML
  */
 function generateRandomBlog( data ) {
     var HTML = '',
@@ -210,12 +194,9 @@ function generateRandomBlog( data ) {
 
 // CONTACT
 /**
- * Takes an array of contacts 
- * and returns generated HTML.
- * 
- * @param {contacts} data
- * 
- * @returns {HTML} HTML
+ * Takes an array of contacts and returns generated HTML.
+ * @param {[]} data
+ * @returns {string} HTML
  */
 function generateContactInfo( data ){
     var HTML='';
@@ -247,10 +228,8 @@ function generateContactInfo( data ){
 /**
  * Takes an array of social networks 
  * and returns generated HTML with icons.
- * 
- * @param {social_networks} data
- * 
- * @returns {HTML} HTML
+ * @param {[]} data
+ * @returns {string} HTML
  */
 function generateSocialNetworks( data ){
     var HTML = '',
@@ -273,10 +252,7 @@ function generateSocialNetworks( data ){
 /**
  * Detects the section we are scrolled to
  * and marks the section in header by changing its style.
- * 
- * @param {number} scrollTop
- * 
- * @returns
+ * @param {number} scrollTop - units in px
  */
 function detectClosestVisibleSection( scrollTop ) {
     var a_tags = $('#header nav > a'),
@@ -323,9 +299,6 @@ function detectClosestVisibleSection( scrollTop ) {
 /**
  * Detects our scroll position
  * and changes header design accordingly.
- * 
- * @param
- * @returns 
  */
 function headerDesignState() {
     if ( $(document).scrollTop() < 70 ) {
