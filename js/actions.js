@@ -30,6 +30,7 @@ document.querySelector('#services .service-list').innerHTML = generateServices( 
 // RESUME
 
 // PORTFOLIO
+document.querySelector('#portfolio .gallery-list').innerHTML = generatePortfolio( portfolio );
 
 // TESTIMONIALS
 document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(testimonials, 0);

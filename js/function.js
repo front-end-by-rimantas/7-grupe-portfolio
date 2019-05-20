@@ -29,6 +29,10 @@ function generateServices( data ) {
 // RESUME
 
 // PORTFOLIO
+function generatePortfolio( data ) {
+    var item = document.getElementById('portfolio_item_template').innerHTML;
+    return template.render( item, data );
+}
 
 // TESTIMONIALS
 var activeTestimonial = 0;

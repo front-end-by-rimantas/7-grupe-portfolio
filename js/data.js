@@ -50,6 +50,38 @@ var services = [
 // RESUME
 
 // PORTFOLIO
+var portfolio = [
+    {
+        photo: 'apps.jpg',
+        title: 'Illustration work 1',
+        tag: 'illustration'
+    },
+    {
+        photo: 'apps.jpg',
+        title: 'Illustration work 2',
+        tag: 'illustration'
+    },
+    {
+        photo: 'apps.jpg',
+        title: 'Illustration work 3',
+        tag: 'illustration'
+    },
+    {
+        photo: 'apps.jpg',
+        title: 'Illustration work 4',
+        tag: 'illustration'
+    },
+    {
+        photo: 'apps.jpg',
+        title: 'Illustration work 5',
+        tag: 'illustration'
+    },
+    {
+        photo: 'apps.jpg',
+        title: 'Illustration work 6',
+        tag: 'illustration'
+    }
+];
 
 // TESTIMONIALS
 var testimonials = [

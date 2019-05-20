@@ -125,54 +125,16 @@
                     <div>Parot</div>
                 </div>
                 <div class="gallery-list">
-                    <div class="gallery-item">
-                        <img src="img/portfolio/apps.jpg" alt="">
-                        <div class="black"></div>
-                        <div class="texts">
-                            <div class="title">Ilutration work</div>
-                            <div class="tag btn btn-red btn-small">ilustration</div>
+                    <script id="portfolio_item_template" type="text/template">
+                        <div class="gallery-item">
+                            <img src="img/portfolio/{{photo}}" alt="">
+                            <div class="black"></div>
+                            <div class="texts">
+                                <div class="title">{{title}}</div>
+                                <div class="tag btn btn-red btn-small">{{tag}}</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/portfolio/apps.jpg" alt="">
-                        <div class="black"></div>
-                        <div class="texts">
-                            <div class="title">Ilutration work</div>
-                            <div class="tag btn btn-red btn-small">ilustration</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/portfolio/apps.jpg" alt="">
-                        <div class="black"></div>
-                        <div class="texts">
-                            <div class="title">Ilutration work</div>
-                            <div class="tag btn btn-red btn-small">ilustration</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/portfolio/apps.jpg" alt="">
-                        <div class="black"></div>
-                        <div class="texts">
-                            <div class="title">Ilutration work</div>
-                            <div class="tag btn btn-red btn-small">ilustration</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/portfolio/apps.jpg" alt="">
-                        <div class="black"></div>
-                        <div class="texts">
-                            <div class="title">Ilutration work</div>
-                            <div class="tag btn btn-red btn-small">ilustration</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="img/portfolio/apps.jpg" alt="">
-                        <div class="black"></div>
-                        <div class="texts">
-                            <div class="title">Ilutration work</div>
-                            <div class="tag btn btn-red btn-small">ilustration</div>
-                        </div>
-                    </div>
+                    </script>
                 </div>
             </div>
         </div>
@@ -250,6 +212,7 @@
 
     <script src="js/data.js"></script>
     <script src="js/jQuery.js"></script>
+    <script src="js/template-generator.js"></script>
     <script src="js/function.js"></script>
     <script src="js/actions.js"></script>
 </body>
