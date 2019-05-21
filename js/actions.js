@@ -32,7 +32,7 @@ document.querySelector('#services .service-list').innerHTML = generateServices( 
 // PORTFOLIO
 
 // TESTIMONIALS
-document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(testimonials, 0);
+document.querySelector('#testimonials .testimonials-list').innerHTML = generateTestimonial(testimonials, 0);
 
 // BLOG
 document.querySelector('#blog .blog-list').innerHTML = generateRandomBlog( blog );

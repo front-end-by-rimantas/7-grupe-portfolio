@@ -43,30 +43,50 @@ var activeTestimonial = 0;
  * @param {[]} data
  * @returns {string} HTML
  */
-function generateTestimonial( data, activeTestimonial=0 ){
+function generateTestimonial( data ){
     var HTML = '',
-        testimonial;
+        testimonial,
+        good_data = [];
         
-    if (!Array.isArray(data)){
+    if ( !Array.isArray(data) ||
+         data.length === 0 ){
         return HTML;
     }
 
-    if ( data.length === 0 ||
-         !data[activeTestimonial] ){
-        return HTML;
-    }
-    testimonial = data[activeTestimonial];
-
-    if ( testimonial.avatar &&
-         testimonial.p &&
-         testimonial.name ){
-        HTML += '<img src="img/testimonials/'+testimonial.avatar+'" alt= "'+testimonial.name+'">\
-                <p>'+testimonial.p+'</p>\
-                <h4>'+testimonial.name+'</h4>';
-        if ( testimonial.position ) {
-            HTML += '<p>'+testimonial.position+'</p>';
+    // pasitikriname pateiktus duomenis ir pasiliekame tik gerus is "data" kintamojo
+    for ( var i=0; i<data.length; i++ ) {
+        if ( data[i].avatar &&
+             data[i].p &&
+             data[i].name ){
+            good_data.push( data[i] );
         }
     }
+
+    if ( good_data.length === 0 ) {
+        return HTML;
+    }
+
+    // atsiliepimai: paskutis + visi + pirmutinis
+    data = [];
+    data.push( good_data[good_data.length-1] );
+    data = data.concat( good_data );
+    data.push( good_data[0] );
+
+    for ( var i=0; i<data.length; i++ ) {
+        HTML += '<div class="item" style="width: 20%;">\
+                    <div class="content">\
+                        <img src="img/testimonials/'+data[i].avatar+'" alt= "'+data[i].name+'">\
+                        <p>'+data[i].p+'</p>\
+                        <h4>'+data[i].name+'</h4>\
+                    </div>\
+                </div>';
+    }
+
+    var list = document.querySelector('#testimonials .testimonials-list');
+
+    list.style.width = data.length * 100 + '%';
+    list.style.marginLeft = '-200%';
+
     return HTML;
 }
 /**
