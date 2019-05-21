@@ -363,6 +363,89 @@ body * {
     text-transform: uppercase;
 }
 /* my portfolio */
+.gallery {
+    display: inline-block;
+    width: 100%;
+}
+    .gallery > .gallery-filter {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+        .gallery > .gallery-filter > div {
+            display: inline-block;
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 5px 20px;
+        }
+            .gallery > .gallery-filter > div:hover,
+            .gallery > .gallery-filter > .active {
+                color: #F34236;
+            }
+    .gallery > .gallery-list {
+        display: inline-block;
+        width: calc(100% + 30px);
+        margin-left: -15px;
+    }
+        .gallery > .gallery-list > .gallery-item {
+            display: inline-block;
+            float: left;
+            width: calc( (100% - 90px) / 3 );
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px #9997;
+            padding: 10px;
+            border-radius: 8px;
+            position: relative;
+        }
+            .gallery .gallery-item > img {
+                display: inline-block;
+                width: 100%;
+            }
+            .gallery .gallery-item > .black {
+                display: inline-block;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                opacity: 0;
+                background-color: #000C;
+                transition: top 300ms, left 300ms, bottom 300ms, right 300ms, opacity 300ms;
+            }
+                .gallery .gallery-item:hover > .black {
+                    top: 10px;
+                    right: 10px;
+                    bottom: 10px;
+                    left: 10px;
+                    opacity: 1;
+                }
+            .gallery .gallery-item > .texts {
+                display: inline-block;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                opacity: 0;
+                color: #FFF;
+                transition: top 300ms, left 300ms, right 300ms, opacity 300ms;
+            }
+                .gallery .gallery-item:hover > .texts {
+                    top: 30px;
+                    left: 30px;
+                    right: 30px;
+                    opacity: 1;
+                }
+                .gallery .gallery-item > .texts > .title {
+                    font-size: 30px;
+                    line-height: 30px;
+                }
+                .gallery .gallery-item > .texts > .tag {
+                    margin-top: 10px;
+                    text-transform: lowercase;
+                }
 
 /* testimonials */
 .testimonial {
