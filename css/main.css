@@ -368,22 +368,21 @@ body * {
             }
     .gallery > .gallery-list {
         display: inline-block;
-        width: 100%;
+        width: calc(100% + 30px);
+        margin-left: -15px;
     }
         .gallery > .gallery-list > .gallery-item {
             display: inline-block;
             float: left;
-            width: calc( (100% - 60px) / 3 );
-            margin-right: 30px;
+            width: calc( (100% - 90px) / 3 );
+            margin-right: 15px;
+            margin-left: 15px;
             margin-bottom: 30px;
             box-shadow: 0 2px 8px #9997;
             padding: 10px;
             border-radius: 8px;
             position: relative;
         }
-            .gallery > .gallery-list > .gallery-item:nth-child(3n) {
-                margin-right: 0;
-            }
             .gallery .gallery-item > img {
                 display: inline-block;
                 width: 100%;
