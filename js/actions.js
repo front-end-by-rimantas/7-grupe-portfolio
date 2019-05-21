@@ -34,6 +34,36 @@ document.querySelector('#services .service-list').innerHTML = generateServices( 
 // TESTIMONIALS
 document.querySelector('#testimonials .testimonials-list').innerHTML = generateTestimonial(testimonials, 0);
 
+$('#go-left').click(function(){
+    $("#testimonials .testimonials-list").animate({
+        'margin-left': '-=100%'
+    }, 1000, function() {
+        var width = parseInt($(this).width()),
+            item_width = parseInt($(this).find('.item').width()),
+            margin = parseInt($(this).css('margin-left'));
+            console.log( margin );
+            
+            if ( -margin === (width - item_width) ) {
+                $(this).css('margin-left', '-'+ (item_width) + 'px')
+            }
+        // Animation complete.
+    });
+});
+
+$('#go-right').click(function(){
+    $("#testimonials .testimonials-list").animate({
+        'margin-left': '+=100%'
+    }, 1000, function() {
+        var width = parseInt($(this).width()),
+            item_width = parseInt($(this).find('.item').width()),
+            margin = parseInt($(this).css('margin-left'));
+            if ( margin === 0 ) {
+                $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px')
+            }
+        // Animation complete.
+    });
+});
+
 // BLOG
 document.querySelector('#blog .blog-list').innerHTML = generateRandomBlog( blog );
 
