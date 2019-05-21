@@ -389,27 +389,38 @@ body * {
                 width: 100%;
             }
             .gallery .gallery-item > .black {
-                display: none;
+                display: inline-block;
                 position: absolute;
-                top: 10px;
-                right: 10px;
-                bottom: 10px;
-                left: 10px;
-                background-color: #0007;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                opacity: 0;
+                background-color: #000C;
+                transition: top 300ms, left 300ms, bottom 300ms, right 300ms, opacity 300ms;
             }
                 .gallery .gallery-item:hover > .black {
-                    display: inline-block;
+                    top: 10px;
+                    right: 10px;
+                    bottom: 10px;
+                    left: 10px;
+                    opacity: 1;
                 }
             .gallery .gallery-item > .texts {
-                display: none;
+                display: inline-block;
                 position: absolute;
-                top: 30px;
-                left: 30px;
-                right: 30px;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                opacity: 0;
                 color: #FFF;
+                transition: top 300ms, left 300ms, right 300ms, opacity 300ms;
             }
                 .gallery .gallery-item:hover > .texts {
-                    display: inline-block;
+                    top: 30px;
+                    left: 30px;
+                    right: 30px;
+                    opacity: 1;
                 }
                 .gallery .gallery-item > .texts > .title {
                     font-size: 30px;
