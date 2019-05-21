@@ -32,7 +32,19 @@ document.querySelector('#services .service-list').innerHTML = generateServices( 
 // PORTFOLIO
 document.querySelector('#portfolio .gallery-list').innerHTML = generatePortfolio( portfolio );
 $('#portfolio .gallery-filter > div').click(function(){
-    console.log( $(this).text() );
+    var clicked = $(this).text();
+    $('#portfolio .gallery-filter > div').removeClass('active');
+    $(this).addClass('active');
+    if ( clicked === 'All' ) {
+        $('#portfolio .gallery-list > .gallery-item').show();
+    } else {
+        $('#portfolio .gallery-list > .gallery-item').hide();
+        $('#portfolio .gallery-list > .gallery-item').each(function(){
+            if ( $(this).find('.tag').text() === clicked ) {
+                $(this).show();
+            }
+        });
+    }
 });
 
 // TESTIMONIALS

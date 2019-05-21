@@ -42,6 +42,7 @@ function generatePortfolio( data ) {
         }
     }
     document.querySelector('#portfolio .gallery-filter').innerHTML = HTML_filter;
+    
     return template.render( gellary_item, data );
 }
 
