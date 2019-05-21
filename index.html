@@ -116,7 +116,24 @@
     <div id="portfolio" class="bg-white">
         <div class="container">
             <h2 class="section-title"><span>My</span> portfolio</h2>
-                PORTFOLIO
+            <div class="gallery">
+                <div class="gallery-filter">
+                    <!-- <div class="active">All</div>
+                    <div>apps</div> -->
+                </div>
+                <div class="gallery-list">
+                    <script id="portfolio_item_template" type="text/template">
+                        <div class="gallery-item">
+                            <img src="img/portfolio/{{photo}}" alt="">
+                            <div class="black"></div>
+                            <div class="texts">
+                                <div class="title">{{title}}</div>
+                                <div class="tag btn btn-red btn-small">{{tag}}</div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -196,6 +213,7 @@
 
     <script src="js/data.js"></script>
     <script src="js/jQuery.js"></script>
+    <script src="js/template-generator.js"></script>
     <script src="js/function.js"></script>
     <script src="js/actions.js"></script>
 </body>
