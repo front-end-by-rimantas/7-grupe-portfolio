@@ -19,6 +19,10 @@ $('#header nav > a').click(function(){
         headerDesignState();
     });
 
+$('#hamburger').click(function(){
+    $('#header nav').toggleClass('show-menu');
+});
+
 // HERO
 
 // ABOUT US
