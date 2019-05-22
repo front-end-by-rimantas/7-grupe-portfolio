@@ -39,7 +39,7 @@ function generateServices( data ) {
 var activeTestimonial = 0;
 /**
  * Takes an array of testimonials figures out which one is active
- * and returnt generated HTLM of that testimonial.
+ * and returns generated HTLM of that testimonial.
  * @param {[]} data
  * @returns {string} HTML
  */
@@ -98,25 +98,25 @@ function generateTestimonial( data ){
  * @param {[]} data
  * @returns {void} changes active testimonial
  */
-function changeTestimonial( direction, data ){
-    var target_element = document.querySelector('#visible_testimonial');
+// function changeTestimonial( direction, data ){
+//     var target_element = document.querySelector('#visible_testimonial');
 
-    if ( direction === 'left' ) {
-        activeTestimonial++;
-        if( activeTestimonial === data.length ){
-            activeTestimonial = 0;
-        }
-    } else if ( direction === 'right' ) {
-        activeTestimonial--;
-        if( activeTestimonial < 0 ){
-            activeTestimonial = data.length - 1;
-        }
-    } else {
-        return;
-    }
+//     if ( direction === 'left' ) {
+//         activeTestimonial++;
+//         if( activeTestimonial === data.length ){
+//             activeTestimonial = 0;
+//         }
+//     } else if ( direction === 'right' ) {
+//         activeTestimonial--;
+//         if( activeTestimonial < 0 ){
+//             activeTestimonial = data.length - 1;
+//         }
+//     } else {
+//         return;
+//     }
 
-    return target_element.innerHTML = generateTestimonial(data, activeTestimonial);
-};
+//     return target_element.innerHTML = generateTestimonial(data, activeTestimonial);
+// };
 
 // BLOG
 /**
