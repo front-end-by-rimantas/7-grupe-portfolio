@@ -111,7 +111,7 @@ $('#testimonials .item')
         } else {
             shift = -(item_width - diferenceMouseX)
         }
-        $("#testimonials .testimonials-list").animate({
+        $(testimonialsList).animate({
             'margin-left': '+=' + shift + 'px'
         }, 1000);
         isDown = false;
@@ -122,7 +122,7 @@ $('#testimonials .item')
             return;
         }
         diferenceMouseX = initialMouseX - event.clientX;
-        $("#testimonials .testimonials-list").css('margin-left', (initialX - diferenceMouseX) + 'px');
+        $(testimonialsList).css('margin-left', (initialX - diferenceMouseX) + 'px');
     })
 
 // BLOG
