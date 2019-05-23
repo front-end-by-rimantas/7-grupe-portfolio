@@ -34,34 +34,6 @@ document.querySelector('#services .service-list').innerHTML = generateServices( 
 // TESTIMONIALS
 document.querySelector('#testimonials .testimonials-list').innerHTML = generateTestimonial(testimonials, 0);
 
-$('#go-left').click(function(){
-    $("#testimonials .testimonials-list").animate({
-        'margin-left': '-=100%'
-    }, 1000, function() {
-        var width = parseInt($(this).width()),
-            item_width = parseInt($(this).find('.item').width()),
-            margin = parseInt($(this).css('margin-left'));
-        if ( -margin === (width - item_width) ) {
-            $(this).css('margin-left', '-'+ (item_width) + 'px');
-        }
-        // Animation complete.
-    });
-});
-
-$('#go-right').click(function(){
-    $("#testimonials .testimonials-list").animate({
-        'margin-left': '+=100%'
-    }, 1000, function() {
-        var width = parseInt($(this).width()),
-            item_width = parseInt($(this).find('.item').width()),
-            margin = parseInt($(this).css('margin-left'));
-        if ( margin === 0 ) {
-            $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
-        }
-        // Animation complete.
-    });
-});
-
 var isDown = false,
     testimonialsList = $("#testimonials .testimonials-list"),
     initialX,
@@ -71,14 +43,51 @@ var isDown = false,
     item_width,
     margin,
     shift,
-    aunimateComplete = true;
+    animateComplete = true;
+
+$('#go-left').click(function(){
+    if(animateComplete === true){
+        animateComplete = false;
+        $("#testimonials .testimonials-list").animate({
+            'margin-left': '-=100%'
+        }, 750, function() {
+            var width = parseInt($(this).width()),
+                item_width = parseInt($(this).find('.item').width()),
+                margin = parseInt($(this).css('margin-left'));
+            if ( -margin === (width - item_width) ) {
+                $(this).css('margin-left', '-'+ (item_width) + 'px');
+            }
+            // Animation complete.
+        });
+        animateComplete = true;
+    }
+});
+
+$('#go-right').click(function(){
+    if(animateComplete === true){
+        animateComplete = false;
+        $("#testimonials .testimonials-list").animate({
+            'margin-left': '+=100%'
+        }, 750, function() {
+            var width = parseInt($(this).width()),
+                item_width = parseInt($(this).find('.item').width()),
+                margin = parseInt($(this).css('margin-left'));
+            if ( margin === 0 ) {
+                $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
+            }
+            // Animation complete.
+        });
+        animateComplete = true;
+    }
+});
 
 $('#testimonials .item')
 .mousedown(function() {
-    if ( aunimateComplete === true ) {
+    if ( animateComplete === true ) {
         initialX = parseInt(testimonialsList.css('margin-left'));
         initialMouseX = event.clientX;
         isDown = true;
+        diferenceMouseX = 0;
         width = parseInt(testimonialsList.width());
         item_width = parseInt(testimonialsList.find('.item').width());
         margin = parseInt(testimonialsList.css('margin-left'));
@@ -91,25 +100,25 @@ $('#testimonials .item')
     if(diferenceMouseX === 0){
         shift = 0;
     } else if(diferenceMouseX < 0){
-        shift = (item_width + diferenceMouseX);
+        shift = (item_width);
     } else {
-        shift = -(item_width - diferenceMouseX);
+        shift = -(item_width);
     }
-    if ( aunimateComplete === true ) {
-        aunimateComplete = false;
+    if ( animateComplete === true ) {
+        animateComplete = false;
         testimonialsList.animate({
-            'margin-left' : '+=' + shift + 'px'
-        }, 1000, function() {
+            'margin-left' : margin + shift + 'px'
+        }, 750, function() {
             var width = parseInt($(this).width()),
                 item_width = parseInt($(this).find('.item').width()),
                 margin = parseInt($(this).css('margin-left'));
-            if ( margin === 0 ) {
+            if ( margin >= 0 && shift > 0) {
                 $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
             }
-            if ( -margin === (width - item_width) ) {
+            if ( -margin <= (width - item_width) && shift < 0 ) {
                 $(this).css('margin-left', '-'+ (item_width) + 'px');
             }
-            aunimateComplete = true;
+            animateComplete = true;
             // Animation complete.
         });
     }
