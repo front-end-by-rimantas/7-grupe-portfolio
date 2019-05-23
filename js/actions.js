@@ -32,7 +32,7 @@ document.querySelector('#services .service-list').innerHTML = generateServices( 
 // PORTFOLIO
 
 // TESTIMONIALS
-document.querySelector('#testimonials .testimonials-list').innerHTML = generateTestimonial(testimonials, 0);
+document.querySelector("#testimonials .testimonials-list").innerHTML += generateTestimonial(testimonials);
 
 var isDown = false,
     testimonialsList = $("#testimonials .testimonials-list"),
@@ -45,21 +45,26 @@ var isDown = false,
     shift,
     animateComplete = true;
 
+$(window).resize(function(){
+    item_width = parseInt(testimonialsList.find('.item').width()),
+    $("#testimonials .testimonials-list").css('margin-left', '-'+ (item_width) + 'px')
+});
+
 $('#go-left').click(function(){
     if(animateComplete === true){
         animateComplete = false;
-        $("#testimonials .testimonials-list").animate({
+        testimonialsList.animate({
             'margin-left': '-=100%'
         }, 750, function() {
-            var width = parseInt($(this).width()),
-                item_width = parseInt($(this).find('.item').width()),
-                margin = parseInt($(this).css('margin-left'));
+            width = parseInt($(this).width()),
+            item_width = parseInt($(this).find('.item').width()),
+            margin = parseInt($(this).css('margin-left'));
             if ( -margin === (width - item_width) ) {
                 $(this).css('margin-left', '-'+ (item_width) + 'px');
             }
             // Animation complete.
+            animateComplete = true;
         });
-        animateComplete = true;
     }
 });
 
@@ -69,19 +74,19 @@ $('#go-right').click(function(){
         $("#testimonials .testimonials-list").animate({
             'margin-left': '+=100%'
         }, 750, function() {
-            var width = parseInt($(this).width()),
-                item_width = parseInt($(this).find('.item').width()),
-                margin = parseInt($(this).css('margin-left'));
+            width = parseInt($(this).width()),
+            item_width = parseInt($(this).find('.item').width()),
+            margin = parseInt($(this).css('margin-left'));
             if ( margin === 0 ) {
                 $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
             }
             // Animation complete.
+            animateComplete = true;
         });
-        animateComplete = true;
     }
 });
 
-$('#testimonials .item')
+$('#testimonials .drag-layer')
 .mousedown(function() {
     if ( animateComplete === true ) {
         initialX = parseInt(testimonialsList.css('margin-left'));
@@ -112,10 +117,10 @@ $('#testimonials .item')
             var width = parseInt($(this).width()),
                 item_width = parseInt($(this).find('.item').width()),
                 margin = parseInt($(this).css('margin-left'));
-            if ( margin >= 0 && shift > 0) {
+            if ( margin === 0) {
                 $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
             }
-            if ( -margin <= (width - item_width) && shift < 0 ) {
+            if ( -margin === (width - item_width) ) {
                 $(this).css('margin-left', '-'+ (item_width) + 'px');
             }
             animateComplete = true;

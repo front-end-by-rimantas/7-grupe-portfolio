@@ -73,7 +73,7 @@ function generateTestimonial( data ){
     data.push( good_data[0] );
 
     for ( var i=0; i<data.length; i++ ) {
-        HTML += '<div class="item" style="width: 20%;">\
+        HTML += '<div class="item" style="width:'+ 100 / data.length +'%;">\
                     <div class="content">\
                         <img src="img/testimonials/'+data[i].avatar+'" alt= "'+data[i].name+'">\
                         <p>'+data[i].p+'</p>\
