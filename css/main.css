@@ -384,9 +384,9 @@ body * {
         background-color: transparent;
         z-index: 1;
     }
-    /* #testimonials .drag-layer:hover {
+    #testimonials .drag-layer:hover {
         cursor: grab;
-    } */
+    }
     #testimonials .drag-layer:active {
         cursor: grabbing;
     }

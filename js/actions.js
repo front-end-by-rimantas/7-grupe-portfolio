@@ -43,11 +43,12 @@ var isDown = false,
     item_width,
     margin,
     shift,
+    current_pos = 2,
     animateComplete = true;
 
 $(window).resize(function(){
-    item_width = parseInt(testimonialsList.find('.item').width()),
-    $("#testimonials .testimonials-list").css('margin-left', '-'+ (item_width) + 'px')
+    item_width = parseInt(testimonialsList.find('.item').width());
+    testimonialsList.css('margin-left', '-'+ (item_width * current_pos) + 'px');
 });
 
 $('#go-left').click(function(){
@@ -56,13 +57,14 @@ $('#go-left').click(function(){
         testimonialsList.animate({
             'margin-left': '-=100%'
         }, 750, function() {
-            width = parseInt($(this).width()),
-            item_width = parseInt($(this).find('.item').width()),
+            width = parseInt($(this).width());
+            item_width = parseInt($(this).find('.item').width());
             margin = parseInt($(this).css('margin-left'));
             if ( -margin === (width - item_width) ) {
                 $(this).css('margin-left', '-'+ (item_width) + 'px');
             }
             // Animation complete.
+            current_pos = Math.abs(margin) / item_width;
             animateComplete = true;
         });
     }
@@ -74,13 +76,14 @@ $('#go-right').click(function(){
         $("#testimonials .testimonials-list").animate({
             'margin-left': '+=100%'
         }, 750, function() {
-            width = parseInt($(this).width()),
-            item_width = parseInt($(this).find('.item').width()),
+            width = parseInt($(this).width());
+            item_width = parseInt($(this).find('.item').width());
             margin = parseInt($(this).css('margin-left'));
             if ( margin === 0 ) {
                 $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
             }
             // Animation complete.
+            current_pos = Math.abs(margin) / item_width;
             animateComplete = true;
         });
     }
@@ -114,9 +117,9 @@ $('#testimonials .drag-layer')
         testimonialsList.animate({
             'margin-left' : margin + shift + 'px'
         }, 750, function() {
-            var width = parseInt($(this).width()),
-                item_width = parseInt($(this).find('.item').width()),
-                margin = parseInt($(this).css('margin-left'));
+            width = parseInt($(this).width());
+            item_width = parseInt($(this).find('.item').width());
+            margin = parseInt($(this).css('margin-left'));
             if ( margin === 0) {
                 $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
             }
@@ -124,6 +127,7 @@ $('#testimonials .drag-layer')
                 $(this).css('margin-left', '-'+ (item_width) + 'px');
             }
             animateComplete = true;
+            current_pos = Math.abs(margin) / item_width;
             // Animation complete.
         });
     }
