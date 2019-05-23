@@ -88,8 +88,7 @@ $('#go-right').click(function(){
     }
 });
 
-$('#testimonials .drag-layer')
-.mousedown(function() {
+$('#testimonials .drag-layer').mousedown(function() {
     if ( animateComplete === true ) {
         initialMouseX = event.clientX;
         isDown = true;
