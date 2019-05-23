@@ -98,8 +98,8 @@ $('#testimonials .drag-layer')
         item_width = parseInt(testimonialsList.find('.item').width());
         margin = parseInt(testimonialsList.css('margin-left'));
     }
-})
-.mouseup(function() {
+});
+$('*').mouseup(function() {
     if(!isDown){
         return;
     }
@@ -131,8 +131,8 @@ $('#testimonials .drag-layer')
     }
     isDown = false;
     return;
-})
-.mousemove(function() {
+});
+$('*').mousemove(function() {
     if(!isDown){
         return;
     }
