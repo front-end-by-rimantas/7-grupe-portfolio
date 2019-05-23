@@ -36,7 +36,6 @@ document.querySelector("#testimonials .testimonials-list").innerHTML += generate
 
 var isDown = false,
     testimonialsList = $("#testimonials .testimonials-list"),
-    initialX,
     initialMouseX,
     diferenceMouseX,
     width,
@@ -92,7 +91,6 @@ $('#go-right').click(function(){
 $('#testimonials .drag-layer')
 .mousedown(function() {
     if ( animateComplete === true ) {
-        initialX = parseInt(testimonialsList.css('margin-left'));
         initialMouseX = event.clientX;
         isDown = true;
         diferenceMouseX = 0;
@@ -139,7 +137,7 @@ $('#testimonials .drag-layer')
         return;
     }
     diferenceMouseX = initialMouseX - event.clientX;
-    testimonialsList.css('margin-left', (initialX - diferenceMouseX) + 'px');
+    testimonialsList.css('margin-left', (margin - diferenceMouseX) + 'px');
 });
 
 // BLOG
