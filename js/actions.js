@@ -98,7 +98,7 @@ $('#testimonials .drag-layer').mousedown(function() {
         margin = parseInt(testimonialsList.css('margin-left'));
     }
 });
-$('*').mouseup(function() {
+$('body').mouseup(function() {
     if(!isDown){
         return;
     }
@@ -131,7 +131,7 @@ $('*').mouseup(function() {
     isDown = false;
     return;
 });
-$('*').mousemove(function() {
+$('body').mousemove(function() {
     if(!isDown){
         return;
     }
