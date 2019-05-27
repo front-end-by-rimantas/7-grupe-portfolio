@@ -370,10 +370,26 @@ body * {
 }
 .testimonials-list {
     display: inline-block;
+    position: relative;
     text-align: center;
     width: 100%;
     color: #333;
 }
+    #testimonials .drag-layer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+        z-index: 1;
+    }
+    #testimonials .drag-layer:hover {
+        cursor: grab;
+    }
+    #testimonials .drag-layer:active {
+        cursor: grabbing;
+    }
     .testimonials-list > .item {
         display: inline-block;
         float: left;
