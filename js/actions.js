@@ -52,7 +52,112 @@ $('#portfolio .gallery-filter > div').click(function(){
 });
 
 // TESTIMONIALS
-document.querySelector('#testimonials .testimonial').innerHTML = generateTestimonial(testimonials, 0);
+document.querySelector("#testimonials .testimonials-list").innerHTML += generateTestimonial(testimonials);
+
+var isDown = false,
+    testimonialsList = $("#testimonials .testimonials-list"),
+    initialMouseX,
+    diferenceMouseX,
+    width,
+    item_width,
+    margin,
+    shift,
+    current_pos = 2,
+    animateComplete = true;
+
+$(window).resize(function(){
+    item_width = parseInt(testimonialsList.find('.item').width());
+    testimonialsList.css('margin-left', '-'+ (item_width * current_pos) + 'px');
+});
+
+$('#go-left').click(function(){
+    if(animateComplete === true){
+        animateComplete = false;
+        testimonialsList.animate({
+            'margin-left': '-=100%'
+        }, 750, function() {
+            width = parseInt($(this).width());
+            item_width = parseInt($(this).find('.item').width());
+            margin = parseInt($(this).css('margin-left'));
+            if ( -margin === (width - item_width) ) {
+                $(this).css('margin-left', '-'+ (item_width) + 'px');
+            }
+            // Animation complete.
+            current_pos = Math.abs(margin) / item_width;
+            animateComplete = true;
+        });
+    }
+});
+
+$('#go-right').click(function(){
+    if(animateComplete === true){
+        animateComplete = false;
+        $("#testimonials .testimonials-list").animate({
+            'margin-left': '+=100%'
+        }, 750, function() {
+            width = parseInt($(this).width());
+            item_width = parseInt($(this).find('.item').width());
+            margin = parseInt($(this).css('margin-left'));
+            if ( margin === 0 ) {
+                $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
+            }
+            // Animation complete.
+            current_pos = Math.abs(margin) / item_width;
+            animateComplete = true;
+        });
+    }
+});
+
+$('#testimonials .drag-layer').mousedown(function() {
+    if ( animateComplete === true ) {
+        initialMouseX = event.clientX;
+        isDown = true;
+        diferenceMouseX = 0;
+        width = parseInt(testimonialsList.width());
+        item_width = parseInt(testimonialsList.find('.item').width());
+        margin = parseInt(testimonialsList.css('margin-left'));
+    }
+});
+$('body').mouseup(function() {
+    if(!isDown){
+        return;
+    }
+    if(diferenceMouseX === 0){
+        shift = 0;
+    } else if(diferenceMouseX < 0){
+        shift = (item_width);
+    } else {
+        shift = -(item_width);
+    }
+    if ( animateComplete === true ) {
+        animateComplete = false;
+        testimonialsList.animate({
+            'margin-left' : margin + shift + 'px'
+        }, 750, function() {
+            width = parseInt($(this).width());
+            item_width = parseInt($(this).find('.item').width());
+            margin = parseInt($(this).css('margin-left'));
+            if ( margin === 0) {
+                $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
+            }
+            if ( -margin === (width - item_width) ) {
+                $(this).css('margin-left', '-'+ (item_width) + 'px');
+            }
+            animateComplete = true;
+            current_pos = Math.abs(margin) / item_width;
+            // Animation complete.
+        });
+    }
+    isDown = false;
+    return;
+});
+$('body').mousemove(function() {
+    if(!isDown){
+        return;
+    }
+    diferenceMouseX = initialMouseX - event.clientX;
+    testimonialsList.css('margin-left', (margin - diferenceMouseX) + 'px');
+});
 
 // BLOG
 document.querySelector('#blog .blog-list').innerHTML = generateRandomBlog( blog );
