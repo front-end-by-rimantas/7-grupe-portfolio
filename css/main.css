@@ -547,7 +547,11 @@ body * {
             .testimonials-list > .item > .content > .btn {
                 margin: 0 4px;
             }
-
+@media (max-width: 500px) {
+    .testimonials-list > .item > .content {
+        padding: 0 10%;
+    }
+}
 /* my blog */
 .blog-list {
     display: flex;

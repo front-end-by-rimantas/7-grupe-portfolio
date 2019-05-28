@@ -159,6 +159,58 @@ $('body').mousemove(function() {
     testimonialsList.css('margin-left', (margin - diferenceMouseX) + 'px');
 });
 
+document.querySelector('#testimonials .drag-layer').addEventListener("touchstart", function(e) {
+    var event = e;
+    if ( animateComplete === true ) {        
+        initialMouseX = event.touches[0].clientX;           
+        isDown = true;
+        diferenceMouseX = 0;
+        width = parseInt(testimonialsList.width());
+        item_width = parseInt(testimonialsList.find('.item').width());
+        margin = parseInt(testimonialsList.css('margin-left'));
+    }
+});
+document.querySelector('body').addEventListener("touchend",function(e) {
+    if(!isDown){
+        return;
+    }
+    if(diferenceMouseX === 0){
+        shift = 0;
+    } else if(diferenceMouseX < 0){
+        shift = (item_width);
+    } else {
+        shift = -(item_width);
+    }
+    if ( animateComplete === true ) {
+        animateComplete = false;
+        testimonialsList.animate({
+            'margin-left' : margin + shift + 'px'
+        }, 750, function() {
+            width = parseInt($(this).width());
+            item_width = parseInt($(this).find('.item').width());
+            margin = parseInt($(this).css('margin-left'));
+            if ( margin === 0) {
+                $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
+            }
+            if ( -margin === (width - item_width) ) {
+                $(this).css('margin-left', '-'+ (item_width) + 'px');
+            }
+            animateComplete = true;
+            current_pos = Math.abs(margin) / item_width;
+            // Animation complete.
+        });
+    }
+    isDown = false;
+    return;
+});
+document.querySelector('body').addEventListener("touchmove", function(e) {
+    if(!isDown){
+        return;
+    }
+    diferenceMouseX = initialMouseX - e.touches[0].clientX;
+    testimonialsList.css('margin-left', (margin - diferenceMouseX) + 'px');
+});
+
 // BLOG
 document.querySelector('#blog .blog-list').innerHTML = generateRandomBlog( blog );
 
