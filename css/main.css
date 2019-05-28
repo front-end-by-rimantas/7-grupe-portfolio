@@ -162,6 +162,12 @@ body * {
         }
 
 @media ( max-width: 900px ) {
+    #header.show-menu{
+        background-color: #FFF;
+    }
+    #header.show-menu .logo{
+        color: #F00;
+    }
     #header nav:not(.show-menu) {
         display: none;
         width: 100%;
@@ -171,9 +177,10 @@ body * {
         #header nav.show-menu {
             display: inline-block;
         }
-        #header nav > a {
+        #header.show-menu nav > a {
             display: inline-block;
             width: 100%;
+            color: #000;
         }
 
     #header #hamburger {
