@@ -58,11 +58,10 @@ var isDown = false,
     testimonialsList = $("#testimonials .testimonials-list"),
     initialMouseX,
     diferenceMouseX,
-    width,
-    item_width,
-    margin,
-    shift,
+    width = parseInt(testimonialsList.width()),
+    item_width = parseInt(testimonialsList.find('.item').width()),
     current_pos = 2,
+    positions = width / item_width ,
     animateComplete = true;
 
 $(window).resize(function(){
@@ -73,17 +72,14 @@ $(window).resize(function(){
 $('#go-left').click(function(){
     if(animateComplete === true){
         animateComplete = false;
+        current_pos--;        
         testimonialsList.animate({
-            'margin-left': '-=100%'
+            'margin-left': '-' + (item_width * current_pos) + 'px'
         }, 750, function() {
-            width = parseInt($(this).width());
-            item_width = parseInt($(this).find('.item').width());
-            margin = parseInt($(this).css('margin-left'));
-            if ( -margin === (width - item_width) ) {
-                $(this).css('margin-left', '-'+ (item_width) + 'px');
+            if ( current_pos === 0 ) {
+                current_pos = positions - 2;
+                $(this).css('margin-left', '-'+ (item_width * current_pos) + 'px');
             }
-            // Animation complete.
-            current_pos = Math.abs(margin) / item_width;
             animateComplete = true;
         });
     }
@@ -92,17 +88,14 @@ $('#go-left').click(function(){
 $('#go-right').click(function(){
     if(animateComplete === true){
         animateComplete = false;
-        $("#testimonials .testimonials-list").animate({
-            'margin-left': '+=100%'
+        current_pos++;
+        testimonialsList.animate({
+            'margin-left': '-' + (item_width * current_pos) + 'px'
         }, 750, function() {
-            width = parseInt($(this).width());
-            item_width = parseInt($(this).find('.item').width());
-            margin = parseInt($(this).css('margin-left'));
-            if ( margin === 0 ) {
-                $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
+            if ( current_pos === positions -1 ) {
+                current_pos = 1;
+                $(this).css('margin-left', '-'+ (item_width * current_pos) + 'px');
             }
-            // Animation complete.
-            current_pos = Math.abs(margin) / item_width;
             animateComplete = true;
         });
     }
@@ -113,9 +106,6 @@ $('#testimonials .drag-layer').mousedown(function() {
         initialMouseX = event.clientX;
         isDown = true;
         diferenceMouseX = 0;
-        width = parseInt(testimonialsList.width());
-        item_width = parseInt(testimonialsList.find('.item').width());
-        margin = parseInt(testimonialsList.css('margin-left'));
     }
 });
 $('body').mouseup(function() {
@@ -125,27 +115,24 @@ $('body').mouseup(function() {
     if(diferenceMouseX === 0){
         shift = 0;
     } else if(diferenceMouseX < 0){
-        shift = (item_width);
+        current_pos--;
     } else {
-        shift = -(item_width);
+        current_pos++;
     }
     if ( animateComplete === true ) {
         animateComplete = false;
         testimonialsList.animate({
-            'margin-left' : margin + shift + 'px'
+            'margin-left': '-' + (item_width * current_pos) + 'px'
         }, 750, function() {
-            width = parseInt($(this).width());
-            item_width = parseInt($(this).find('.item').width());
-            margin = parseInt($(this).css('margin-left'));
-            if ( margin === 0) {
-                $(this).css('margin-left', '-'+ (width - 2*item_width) + 'px');
+            if ( current_pos === positions -1 ) {
+                current_pos = 1;
+                $(this).css('margin-left', '-'+ (item_width * current_pos) + 'px');
             }
-            if ( -margin === (width - item_width) ) {
-                $(this).css('margin-left', '-'+ (item_width) + 'px');
+            if ( current_pos === 0 ) {
+                current_pos = positions - 2;
+                $(this).css('margin-left', '-'+ (item_width * current_pos) + 'px');
             }
             animateComplete = true;
-            current_pos = Math.abs(margin) / item_width;
-            // Animation complete.
         });
     }
     isDown = false;
@@ -156,7 +143,7 @@ $('body').mousemove(function() {
         return;
     }
     diferenceMouseX = initialMouseX - event.clientX;
-    testimonialsList.css('margin-left', (margin - diferenceMouseX) + 'px');
+    testimonialsList.css('margin-left', '-' + ( (item_width * current_pos) + diferenceMouseX) + 'px');
 });
 
 document.querySelector('#testimonials .drag-layer').addEventListener("touchstart", function(e) {
@@ -185,7 +172,7 @@ document.querySelector('body').addEventListener("touchend",function(e) {
         animateComplete = false;
         testimonialsList.animate({
             'margin-left' : margin + shift + 'px'
-        }, 750, function() {
+        }, 500, function() {
             width = parseInt($(this).width());
             item_width = parseInt($(this).find('.item').width());
             margin = parseInt($(this).css('margin-left'));
