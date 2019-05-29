@@ -162,19 +162,19 @@ body * {
         }
 
 @media ( max-width: 900px ) {
-    #header.show-menu{
+    #header.show-menu {
         background-color: #FFF;
     }
-    #header.show-menu .logo{
+    #header.show-menu .logo {
         color: #F00;
     }
-    #header nav:not(.show-menu) {
+    #header:not(.show-menu) nav {
         display: none;
         width: 100%;
         float: left;
         margin-top: 20px;
     }
-        #header nav.show-menu {
+        #header.show-menu nav {
             display: inline-block;
         }
         #header.show-menu nav > a {

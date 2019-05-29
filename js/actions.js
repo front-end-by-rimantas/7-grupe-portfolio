@@ -21,8 +21,6 @@ $('#header nav > a').click(function(){
 
 $('#hamburger').click(function(){
     $('#header').toggleClass('show-menu');
-    $('#header nav').toggleClass('show-menu');
-    $('#header .btn').toggleClass('btn-red');
 });
 
 // HERO
