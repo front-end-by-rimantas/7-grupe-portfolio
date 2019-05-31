@@ -162,18 +162,25 @@ body * {
         }
 
 @media ( max-width: 900px ) {
-    #header nav:not(.show-menu) {
+    #header.show-menu {
+        background-color: #FFF;
+    }
+    #header.show-menu .logo {
+        color: #F00;
+    }
+    #header:not(.show-menu) nav {
         display: none;
         width: 100%;
         float: left;
         margin-top: 20px;
     }
-        #header nav.show-menu {
+        #header.show-menu nav {
             display: inline-block;
         }
-        #header nav > a {
+        #header.show-menu nav > a {
             display: inline-block;
             width: 100%;
+            color: #000;
         }
 
     #header #hamburger {
@@ -547,7 +554,11 @@ body * {
             .testimonials-list > .item > .content > .btn {
                 margin: 0 4px;
             }
-
+@media (max-width: 500px) {
+    .testimonials-list > .item > .content {
+        padding: 0 10%;
+    }
+}
 /* my blog */
 .blog-list {
     display: flex;
